@@ -1,0 +1,13 @@
+---
+title: "README"
+author: "Alberto Algarra Alarcon"
+date: "Sunday, June 21, 2015"
+output: html_document
+---
+The "run_analysis.R" script run a series of commands in order to create a tidy data frame from two separate datasets: the training and test dataset of a wearable computing app tested in a Samsung Galaxy SII.
+
+For the script to work, the working directory should be the one contaning the smarphone's data folder (UCI HAR Dataset). 
+
+The data of both, the training and test, datasets, are loaded into R, as well as the subject number and the activity performed by the each person. Once this is done, the two datasets are merged into one larger data frame. Then, the names of each numerical variable (data obtained from the accelerometer and gyroscope sensors in the phone), is loaded into R and subsetted into those that contain the **mean** and **standard deviation** values of each measurment or data transformation. This is done by using the function "grep" to seach inside string characters.
+
+Finally, after the variables are subsetted and the data set is reduced, each numerical variable is recalculated to its mean, by each subject and activity, using the function aggregate. 

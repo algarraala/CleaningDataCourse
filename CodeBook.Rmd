@@ -1,0 +1,99 @@
+---
+title: "CodeBook"
+author: "Alberto Algarra Alarcon"
+date: "Sunday, June 21, 2015"
+output: html_document
+---
+The "run_analysis.R" script run a series of commands in order to create a tidy data frame from two separate datasets: the training and test dataset of a wearable computing app tested in a Samsung Galaxy SII.
+
+For the script to work, the working directory should be the one containing the smartphone's data folder (UCI HAR Dataset). 
+
+Each row represents the **_CALCULATED MEAN_** of the measurements taken from each person and activity. Each column represents a different variable, the first two are categorical and define the subject and the activity measured:
+
+1. **_Subject_**: a number with each volunteer person who participated in the study.
+2. **_Activity_**: name of the activity carried out by the subject. There are six. levels: walking, walking upstairs, walking downstairs, sitting, standing and lying.
+
+The rest of the variables are subtracted from the available variables. These numerical variables represent the **mean** and the **standard deviation** of the signals obtained either by the phone's **accelerometer** (measured in _linear acceleration_) or **gyroscope** (measured in _angular velocity_), which are represented as "Acc" and "Gyro" in the variable's names, respectively. The prefix **"t"** denotes that the measurements were taken at a constant rate of 50 Hz. The prefix **"f"** indicates that a Fast Fourier Transformation was applied to some of the signals.
+The accelerometer's signal have gravitational and body motion components, there the **"body"** and **"gravity"** in the name of each variable. Body linear acceleration and angular velocity were derived in time to obtain **Jerk** signals. Also the magnitude (**Mag**) of these three-dimensional signals were calculated using the Euclidean norm.
+Each signal ad a directional component, denoted by the **X**, **Y** or **Z** direction.
+These numerical variables are:
+
+3. **_tBodyAcc-mean()-X_**
+4. **_tBodyAcc-mean()-Y_**
+5. **_tBodyAcc-mean()-Z_**
+6. **_tBodyAcc-std()-X_**
+7. **_tBodyAcc-std()-Y_**
+8. **_tBodyAcc-std()-Z_**
+9. **_tGravityAcc-mean()-X_**
+10. **_tGravityAcc-mean()-Y_**
+11. **_tGravityAcc-mean()-Z_**
+12. **_tGravityAcc-std()-X_**
+13. **_tGravityAcc-std()-Y_**
+14. **_tGravityAcc-std()-Z_**
+15. **_tBodyAccJerk-mean()-X_**
+16. **_tBodyAccJerk-mean()-Y_**
+17. **_tBodyAccJerk-mean()-Z_**
+18. **_tBodyAccJerk-std()-X_**
+19. **_tBodyAccJerk-std()-Y_**
+20. **_tBodyAccJerk-std()-Z_**
+21. **_tBodyGyro-mean()-X_**
+22. **_tBodyGyro-mean()-Y_**
+23. **_tBodyGyro-mean()-Z_**
+24. **_tBodyGyro-std()-X_**
+25. **_tBodyGyro-std()-Y_**
+26. **_tBodyGyro-std()-Z_**
+27. **_tBodyGyroJerk-mean()-X_**
+28. **_tBodyGyroJerk-mean()-Y_**
+29. **_tBodyGyroJerk-mean()-Z_**
+30. **_tBodyGyroJerk-std()-X_**
+31. **_tBodyGyroJerk-std()-Y_**
+32. **_tBodyGyroJerk-std()-Z_**
+33. **_tBodyAccMag-mean()_**
+34. **_tBodyAccMag-std()_**
+35. **_tGravityAccMag-mean()_**
+36. **_tGravityAccMag-std()_**
+37. **_tBodyAccJerkMag-mean()_**
+38. **_tBodyAccJerkMag-std()_**
+39. **_tBodyGyroMag-mean()_**
+40. **_tBodyGyroMag-std()_**
+41. **_tBodyGyroJerkMag-mean()_**
+42. **_tBodyGyroJerkMag-std()_**
+43. **_fBodyAcc-mean()-X_**
+44. **_fBodyAcc-mean()-Y_**
+45. **_fBodyAcc-mean()-Z_**
+46. **_fBodyAcc-std()-X_**
+47. **_fBodyAcc-std()-Y_**
+48. **_fBodyAcc-std()-Z_**
+49. **_fBodyAcc-meanFreq()-X_**
+50. **_fBodyAcc-meanFreq()-Y_**
+51. **_fBodyAcc-meanFreq()-Z_**
+52. **_fBodyAccJerk-mean()-X_**
+53. **_fBodyAccJerk-mean()-Y_**
+54. **_fBodyAccJerk-mean()-Z_**
+55. **_fBodyAccJerk-std()-X_**
+56. **_fBodyAccJerk-std()-Y_**
+57. **_fBodyAccJerk-std()-Z_**
+58. **_fBodyAccJerk-meanFreq()-X_**
+59. **_fBodyAccJerk-meanFreq()-Y_**
+60. **_fBodyAccJerk-meanFreq()-Z_**
+61. **_fBodyGyro-mean()-X_**
+62. **_fBodyGyro-mean()-Y_**
+63. **_fBodyGyro-mean()-Z_**
+64. **_fBodyGyro-std()-X_**
+65. **_fBodyGyro-std()-Y_**
+66. **_fBodyGyro-std()-Z_**
+67. **_fBodyGyro-meanFreq()-X_**
+68. **_fBodyGyro-meanFreq()-Y_**
+69. **_fBodyGyro-meanFreq()-Z_**
+70. **_fBodyAccMag-mean()_**
+71. **_fBodyAccMag-std()_**
+72. **_fBodyAccMag-meanFreq()_**
+73. **_fBodyBodyAccJerkMag-mean()_**
+74. **_fBodyBodyAccJerkMag-std()_**
+75. **_fBodyBodyAccJerkMag-meanFreq()_**
+76. **_fBodyBodyGyroMag-mean()_**
+77. **_fBodyBodyGyroMag-std()_**
+78. **_fBodyBodyGyroMag-meanFreq()_**
+79. **_fBodyBodyGyroJerkMag-mean()_**
+80. **_fBodyBodyGyroJerkMag-std()_**
+81. **_fBodyBodyGyroJerkMag-meanFreq()_**
